@@ -1,0 +1,31 @@
+@import "../../variables";
+
+.search-actors {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  z-index: 1;
+  margin-bottom: 20px;
+
+  .btn-primary {
+    margin-left: 15px;
+  }
+
+  & + .loader {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .search-actors  {
+    position: initial;
+  }
+}

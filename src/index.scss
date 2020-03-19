@@ -1,0 +1,328 @@
+@import "variables";
+
+html {
+  background-color: $black;
+}
+
+body {
+  margin: 20px;
+  font-family: 'Rubik', Arial, sans-serif;
+}
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: $red;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: $red;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  height: 50px;
+  padding: 0 15px;
+  display: block;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.DayPickerInput:nth-child(3) {
+  margin-left: 6px;
+}
+
+.DayPickerInput input,
+.input-text {
+  color: #0e0f14;
+  border: 1px solid #0e0f14;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  height: 50px;
+  margin: 0;
+  font-family: 'Rubik', Arial, sans-serif;
+  padding: 0 20px;
+  line-height: 1.33;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  &.small {
+    height: 38px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+.DayPickerInput input {
+  height: 38px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.select {
+  color: #0e0f14;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Rubik', Arial, sans-serif;
+  line-height: 1.33;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  &.small {
+    font-size: 14px;
+  }
+
+  .css-6q0nyr-Svg {
+    fill: #0e0f14 !important;
+  }
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  height: 13px;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 23px;
+  width: 23px;
+  border: 1px solid $black;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $red;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ReactModal {
+  font-family: 'Rubik', sans-serif;
+  color: $black;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    .caption {
+      font-size: 25px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    img {
+      width: 25px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+  }
+
+  .content {
+    .value {
+      .date-range {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      span + input,
+      input + span:not(.checkmark),
+      span + .InputFromTo-to,
+      .DayPickerInput + span:not(.checkmark) {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .body {
+    table {
+      width: 100%;
+
+      .DayPickerInput {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+
+    [type="submit"] {
+      margin: 0 auto;
+    }
+  }
+}
+
+textarea.input-text.small {
+  resize: none;
+  padding: 10px;
+  height: 80px;
+}
+
+.row {
+  td {
+    vertical-align: top;
+    width: 50%;
+
+    //.row {
+    //  .container:not(:first-child) {
+    //    margin-top: 15px;
+    //  }
+    //}
+
+    &:first-child {
+      width: 50%;
+      font-size: 14px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.weekends {
+  .container {
+    width: 33.33%;
+    float: left;
+  }
+
+  td {
+    & > .row {
+      & > .container {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.weekday, .weekend {
+  .container {
+    margin: 4px 0 16px;
+  }
+}
+
+.react-phone-number-input__row {
+  padding-top: 3px;
+}
+
+.link {
+  color: $red;
+  cursor: pointer;
+}
+
+.loader {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.block {
+  padding: 15px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.auth {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  body {
+    margin: 15px;
+  }
+}

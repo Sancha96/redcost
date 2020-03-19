@@ -1,0 +1,93 @@
+@import "../../variables";
+
+.page.actor {
+  .block {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    display: flex;
+
+    &__avatar {
+      width: 100px;
+      height: 100px;
+      border: 5px solid $red;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: inset 0 3px 15px rgba(0,0,0,0.75);
+      margin-right: 20px;
+    }
+
+    table {
+      width: calc(100% - 130px);
+    }
+
+    .object-photos {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      max-height: 150px;
+      width: 100%;
+      overflow: auto;
+
+      &__photo {
+        position: relative;
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+        .remove {
+          position: absolute;
+          right: 2px;
+          top: 2px;
+          width: 12px;
+          height: 12px;
+          background: #ffffff url(../../img/icon_close.png) center / contain no-repeat;
+          background-size: 70%;
+          border-radius: 1px;
+          cursor: pointer;
+          opacity: 0.8;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .page.actor {
+    .profile {
+      flex-direction: column;
+
+      table {
+        width: 100%;
+      }
+
+      &__avatar {
+        margin: 0 auto 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .page.actor {
+    .profile {
+      table {
+        tr {
+          display: flex;
+          flex-direction: column;
+
+          td:last-child {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

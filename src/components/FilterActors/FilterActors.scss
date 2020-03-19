@@ -1,0 +1,94 @@
+@import "../../variables";
+
+.filter-actors {
+  position: sticky;
+  top: 0;
+  padding: 15px;
+  //box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  border-radius: 2px;
+  box-sizing: border-box;
+  //overflow: auto;
+  //max-height: calc(100vh - 20px);
+  background-color: #ffffff;
+
+  .row {
+    &:not(.open-filter) + .row {
+      margin-top: 10px;
+    }
+
+    .key {
+      font-size: 12.5px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #656565;
+    }
+
+    .value {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+
+      .date-range {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      span + input,
+      input + span:not(.checkmark),
+      span + .InputFromTo-to,
+      .DayPickerInput + span:not(.checkmark) {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .open-filter {
+    display: none;
+    cursor: pointer;
+
+    .key {
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      img {
+        margin-left: auto;
+        width: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .filter-actors {
+    position: initial;
+    order: -1;
+    margin-bottom: 20px;
+
+    .row {
+      display: none;
+
+      &.open-filter {
+        display: block;
+      }
+    }
+
+    &.open {
+      .row {
+        display: block;
+
+        &.open-filter {
+          .key {
+            margin-bottom: 15px;
+
+            img {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
